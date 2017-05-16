@@ -80,7 +80,7 @@ $( document ).ready(function() {
       var translation = result.data('translation');
       if (translation && (translation.length > 0)) {
         text = result.data('translation');
-        voice = 'es-ES_EnriqueVoice';
+        voice = 'de-DE_BirgitVoice';
       } else {
         text = result.data('text');
         voice = 'en-US_MichaelVoice';
