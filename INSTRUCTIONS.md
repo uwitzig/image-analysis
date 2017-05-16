@@ -21,7 +21,8 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 2. Run the following commands to connect to your Bluemix account:
 
-    `cf api https://api.ng.bluemix.net/` for US or `cf api https://api.eu-gb.bluemix.net/` for United Kingdom
+    `cf api https://api.ng.bluemix.net/` for US or 
+    `cf api https://api.eu-gb.bluemix.net/` for United Kingdom
 
     `cf login -u <<your Bluemix account>>`
 
@@ -29,13 +30,17 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 3. Visual Recognition service
 
-    Get information about the service: `cf marketplace -s watson_vision_combined`
+    Get information about the service: 
+    `cf marketplace -s watson_vision_combined`
 
-    Create the free service with name csad_vr: `cf create-service watson_vision_combined free my-visual-recognition`
+    Create the free service with name csad_vr: 
+    `cf create-service watson_vision_combined free my-visual-recognition`
 
-    Generate authentication credentials: `cf create-service-key my-visual-recognition credentials-1`
+    Generate authentication credentials: 
+    `cf create-service-key my-visual-recognition credentials-1`
 
-    Retrieve the new credentials: `cf service-key my-visual-recognition credentials-1`
+    Retrieve the new credentials: 
+    `cf service-key my-visual-recognition credentials-1`
 
 4. Text-to-Speech service
 
