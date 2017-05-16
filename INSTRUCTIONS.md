@@ -59,7 +59,7 @@ The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.c
 
 2. Clone the app structure and files that is hosted on github
 
-   https://github.ibm.com/Daud-Mujiarto/image-analysis
+   https://github.com/uwitzig/image-analysis/
 
 
 3. Edit config.js to add the credentials previously retrieved. (visual_recognition and text_to_speech)
