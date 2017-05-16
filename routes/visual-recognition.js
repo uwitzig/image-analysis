@@ -18,13 +18,14 @@
 
 var fs = require('fs'),
   watson = require('watson-developer-cloud');
+var config = require('../config');
 
 var visualRecognition = watson.visual_recognition({
   version: 'v3',
-  version_date: '2016-05-19',
-  // Uncomment the line below to specify the API Key
-  // api_key: process.env.VISUAL_RECOGNITION_API_KEY || '<api_key>'
+  version_date: config.watson.visual_recognition.version_date,
+  api_key: process.env.VISUAL_RECOGNITION_API_KEY || config.watson.visual_recognition.api_key
 });
+
 
 module.exports.recognize = function(req, res, next) {
   if (!req.file  && !req.file.path) {
