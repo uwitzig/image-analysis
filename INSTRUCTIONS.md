@@ -100,6 +100,60 @@ In this section we'll see how to add the possibility of translating the text rec
 
 6. Restart the app
 
+7. Test the application at: http://localhost:3000
+
+   Select an image to classify it
+
+   At this point you can classify images, translate the classifier to german and use the text_to_speech service.
+
+## Deploy the application to bluemix
+
+You will need to create the "manifest.yml" file. This is a helper file for identifying and pushing the application up to the IBM Bluemix environment. You can use this file to declare the resources an metadata required for you application to run in Bluemix. This file can also be used to bind existing services to your application.
+
+1. Create the following file and open it with a text/code editor:
+
+   .../image-analysis-master/manifest.yml
+   
+2. At line 1, enter the following lines:
+
+```js
+  applications:
+  domain: mybluemix.net
+  services:
+  - my-text-to-speech
+  - my-visual-recognition
+  - my-language-translator
+  name: image-analysis
+  host: image-analysis-<yourUniqueName>
+  path: .
+  disk_quota: 1024M
+  memory: 512M
+```
+
+3. Each application hosted in IBM Bluemix needs to have a unique sub-domain. In order to distinguish your application from other developers that may have gone through this exercise, you should replace `<yourUniqueName>`with your initials to the host entry in the file. For example it might look like:
+
+`host: image-analysis-uwi`
+
+4. If you have your watson services created in the "United Kingdom" instead of the "US South" region then change the domain to "eu-gb.bluemix.net". In this case your domain entry has to be like this:
+
+`domain: eu-gb.bluemix.net`
+
+5. Save and close the file
+
+6. Create the following file and open it with a text/code editor:
+
+   .../image-analysis-master/.cfignore
+   
+7. When you installed the required Node modules for your application, they were placed in a subdirectory named "node_modules". You do not need to upload these libraries to Bluemix. The PaaS will provide them for you. At line 1, enter the followin lines:
+
+`node_modules`
+
+8. Save and close the file
+
+9. Next, you need to actually push your application to IBM Bluemix. Return to your terminal/command window and enter the following commands. You should execute these commands in the .../image-analysis-master/ directory.
+
+
+
 # Congratulations
 You have completed the Image Analysis Lab! :bowtie:
 
