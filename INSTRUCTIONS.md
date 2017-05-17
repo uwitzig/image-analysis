@@ -119,16 +119,16 @@ You will need to create the "manifest.yml" file. This is a helper file for ident
 
 ```js
 applications:
+- services:
+  - my-text-to-speech
+  - my-visual-recognition
+  - my-language-translator 
   domain: mybluemix.net
   name: image-analysis
   host: image-analysis-<yourUniqueName>
   path: .
   disk_quota: 1024M
   memory: 512M
-- services:
-  - my-text-to-speech
-  - my-visual-recognition
-  - my-language-translator  
 ```
 
 3. Each application hosted in IBM Bluemix needs to have a unique sub-domain. In order to distinguish your application from other developers that may have gone through this exercise, you should replace `<yourUniqueName>`with your initials to the host entry in the file. For example it might look like:
