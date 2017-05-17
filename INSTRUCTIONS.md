@@ -21,8 +21,9 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 2. Run the following commands to connect to your Bluemix account:
 
-    `cf api https://api.ng.bluemix.net/` for US or 
-    `cf api https://api.eu-gb.bluemix.net/` for United Kingdom
+    `cf api https://api.ng.bluemix.net/` for "US South" or 
+    
+    `cf api https://api.eu-gb.bluemix.net/` for "United Kingdom" region
 
     `cf login -u <<your Bluemix account>>`
 
@@ -117,7 +118,7 @@ You will need to create the "manifest.yml" file. This is a helper file for ident
 2. At line 1, enter the following lines:
 
 ```js
-  applications:
+applications:
   domain: mybluemix.net
   services:
   - my-text-to-speech
@@ -132,11 +133,15 @@ You will need to create the "manifest.yml" file. This is a helper file for ident
 
 3. Each application hosted in IBM Bluemix needs to have a unique sub-domain. In order to distinguish your application from other developers that may have gone through this exercise, you should replace `<yourUniqueName>`with your initials to the host entry in the file. For example it might look like:
 
-`host: image-analysis-uwi`
+```js
+host: image-analysis-uwi
+```
 
 4. If you have your watson services created in the "United Kingdom" instead of the "US South" region then change the domain to "eu-gb.bluemix.net". In this case your domain entry has to be like this:
 
-`domain: eu-gb.bluemix.net`
+```js
+domain: eu-gb.bluemix.net
+```
 
 5. Save and close the file
 
@@ -146,12 +151,31 @@ You will need to create the "manifest.yml" file. This is a helper file for ident
    
 7. When you installed the required Node modules for your application, they were placed in a subdirectory named "node_modules". You do not need to upload these libraries to Bluemix. The PaaS will provide them for you. At line 1, enter the followin lines:
 
-`node_modules`
+```js
+node_modules
+```
 
 8. Save and close the file
 
 9. Next, you need to actually push your application to IBM Bluemix. Return to your terminal/command window and enter the following commands. You should execute these commands in the .../image-analysis-master/ directory.
+  
+    `cf api https://api.ng.bluemix.net/` for "US South" or 
+    
+    `cf api https://api.eu-gb.bluemix.net/` for "United Kingdom" region
 
+    `cf login -u <<your Bluemix account>>`
+
+    When prompted, enter your Bluemix password
+    
+    `cf push`
+    
+10. The Cloud Foundry command-line tool will examine the contents of manifest.yml and package.json and push your application to IBM Bluemix. Wait for the application to stage and enter a running state before proceeding. Take a note of the deployed URL for your application.
+
+11. Exit the CF tool withfoe following command:
+
+    `cf logout`
+
+12. Your Node.js application is now running in the cloud! Open a browser an enter the URL for your application you noted in step 10 to test your application.
 
 
 # Congratulations
