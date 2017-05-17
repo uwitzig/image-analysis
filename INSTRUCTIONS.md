@@ -107,7 +107,7 @@ In this section we'll see how to add the possibility of translating the text rec
 
    At this point you can classify images, translate the classifier to german and use the text_to_speech service.
 
-## Deploy the application to bluemix
+## Deploy the application to IBM Bluemix
 
 You will need to create the "manifest.yml" file. This is a helper file for identifying and pushing the application up to the IBM Bluemix environment. You can use this file to declare the resources an metadata required for you application to run in Bluemix. This file can also be used to bind existing services to your application.
 
