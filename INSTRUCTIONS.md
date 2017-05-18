@@ -32,6 +32,7 @@ So let’s get started. The first thing to do is to build out the shell of our a
 3. Visual Recognition service
 
     Get information about the service: 
+    
     `cf marketplace -s watson_vision_combined`
 
     Create the free service with name my-visual-recognition:
@@ -39,20 +40,26 @@ So let’s get started. The first thing to do is to build out the shell of our a
     `cf create-service watson_vision_combined free my-visual-recognition`
 
     Generate authentication credentials: 
+    
     `cf create-service-key my-visual-recognition credentials-1`
 
     Retrieve the new credentials: 
+    
     `cf service-key my-visual-recognition credentials-1`
 
 4. Text-to-Speech service
 
-    Create the standard service with name my-text-to-speech
+    Create the standard service with name my-text-to-speech:
     
     `cf create-service text_to_speech standard my-text-to-speech`
 
-    Generate authentication credentials `cf create-service-key my-text-to-speech credentials-1`
+    Generate authentication credentials:
+    
+    `cf create-service-key my-text-to-speech credentials-1`
 
-    Retrieve the new credentials `cf service-key my-text-to-speech credentials-1`
+    Retrieve the new credentials:
+    
+    `cf service-key my-text-to-speech credentials-1`
 
 
 ## Configure and run this application locally
@@ -92,13 +99,17 @@ In this section we'll see how to add the possibility of translating the text rec
 
 1. Create a language translation service
 
-    Create the standard service with name my-language-translator
+    Create the standard service with name my-language-translator:
     
     `cf create-service language_translator standard my-language-translator`
 
-    Generate authentication credentials: `cf create-service-key my-language-translator credentials-1`
+    Generate authentication credentials: 
+    
+    `cf create-service-key my-language-translator credentials-1`
 
-    Retrieve the new credentials: `cf service-key my-language-translator credentials-1`
+    Retrieve the new credentials: 
+    
+    `cf service-key my-language-translator credentials-1`
 
 3. Edit the config.js file to add the new language translation service credentials, save the file
 
