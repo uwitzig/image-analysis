@@ -34,7 +34,8 @@ So let’s get started. The first thing to do is to build out the shell of our a
     Get information about the service: 
     `cf marketplace -s watson_vision_combined`
 
-    Create the free service with name csad_vr: 
+    Create the free service with name my-visual-recognition:
+    
     `cf create-service watson_vision_combined free my-visual-recognition`
 
     Generate authentication credentials: 
@@ -45,7 +46,9 @@ So let’s get started. The first thing to do is to build out the shell of our a
 
 4. Text-to-Speech service
 
-    Create the standard service with name csad_tts `cf create-service text_to_speech standard my-text-to-speech`
+    Create the standard service with name my-text-to-speech
+    
+    `cf create-service text_to_speech standard my-text-to-speech`
 
     Generate authentication credentials `cf create-service-key my-text-to-speech credentials-1`
 
@@ -66,16 +69,18 @@ The application uses [Node.js](http://nodejs.org/) and [npm](https://www.npmjs.c
 3. Edit config.js to add the credentials previously retrieved. (visual_recognition and text_to_speech)
 
    Leave the credentials for the language-translator empty for now.
+   
+4. Save the config.js file   
 
-4. Go to the project folder in a terminal and run the following command to install all dependencies
+5. Go to the project folder in a terminal and run the following command to install all dependencies
 
     `npm install`
 
-5. Start the application
+6. Start the application
 
     `npm start`
 
-6. Test the application at: http://localhost:3000
+7. Test the application at: http://localhost:3000
 
    You can select an image to classify it
 
@@ -87,7 +92,9 @@ In this section we'll see how to add the possibility of translating the text rec
 
 1. Create a language translation service
 
-    Create the standard service with name csad_lt `cf create-service language_translator standard my-language-translator`
+    Create the standard service with name my-language-translator
+    
+    `cf create-service language_translator standard my-language-translator`
 
     Generate authentication credentials: `cf create-service-key my-language-translator credentials-1`
 
@@ -171,7 +178,7 @@ node_modules
     
 10. The Cloud Foundry command-line tool will examine the contents of manifest.yml and package.json and push your application to IBM Bluemix. Wait for the application to stage and enter a running state before proceeding. Take a note of the deployed URL for your application.
 
-11. Exit the CF tool withfoe following command:
+11. Exit the CF tool with command:
 
     `cf logout`
 
